@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro de Ponente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .menu{
+          
+            text-align: center;
+            display: block;
+            padding: 30px;
+        
+        }
+        .menu a{
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            padding: 6px 20px;
+            border-radius: 15px;
+            background-color: rgb(49, 155, 49);
+            font-family:'Times New Roman', Times, serif;
+           
+        }
+        .menu a:hover{
+            background-color:#007BFF;
+        }
+        a{
+            padding: 50px;
+            
+        }
+        .container {
+            max-width: 600px ;
+            margin:0 auto ;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        select {
+            height: 40px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="ponencias.html">Ponencia</a>
+        <a href="poster.html">Poster</a>
+        
+    </div>
+    <div class="container">
+        <h2>Formulario de Registro de Ponente</h2>
+        <form action="../config/conec_ponentes.php" method="post" enctype="multipart/form-data">
+            <label for="ejeTematico">Eje Temático de Participación:</label>
+            <select id="ejeTematico" name="ejeTematico" required>
+                <option value="Eje 1">Eje 1</option>
+                <option value="Eje 2">Eje 2</option>
+                <option value="Eje 3">Eje 3</option>
+                <option value="Eje 4">Eje 4</option>
+            </select>
+
+            <label for="institucion">Institución de Participación:</label>
+            <select id="institucion" name="institucion" required>
+                <option value="SENA">SENA</option>
+                <option value="EXTERNO">EXTERNO</option>
+            </select>
+
+            <div id="institucionField" style="display: none;">
+                <label for="nombreInstitucion">Nombre de la Institución:</label>
+                <input type="text" id="nombreInstitucion" name="nombreInstitucion">
+            </div>
+
+            <div id="senaFields" style="display: none;">
+                <label for="programaFormacion">Programa de Formación:</label>
+                <input type="text" id="programaFormacion" name="programaFormacion">
+
+                <label for="codigoFicha">Código de Ficha:</label>
+                <input type="text" id="codigoFicha" name="codigoFicha">
+            </div>
+
+            <label for="nombrePonente">Nombre del Ponente o Ponentes:</label>
+            <input type="text" id="nombrePonente" name="nombrePonente" required>
+
+            <label for="correo">Correos de Contacto:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="telefono">Número de Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="tituloProyecto">Título del Proyecto:</label>
+            <input type="text" id="tituloProyecto" name="tituloProyecto" required>
+
+            <label for="tipoProyecto">Tipo de Proyecto:</label>
+            <select id="tipoProyecto" name="tipoProyecto" required>
+                <option value="Formativo">Formativo</option>
+                <option value="Productivo">Productivo</option>
+                <option value="SENNOVA">SENNOVA</option>
+                <option value="Externo">Externo</option>
+            </select>
+
+            <label for="documentoProyecto">Documento en Word del Proyecto (max. 20MB):</label>
+            <input type="file" id="documentoProyecto" name="documentoProyecto" accept=".doc, .docx" required>
+
+            <label for="presentacionProyecto">Presentación en PDF o PowerPoint (max. 20MB):</label>
+            <input type="file" id="presentacionProyecto" name="presentacionProyecto" accept=".pdf, .ppt, .pptx" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        // Mostrar y ocultar campos SENA y Nombre de la Institución según la selección
+        const institucionSelect = document.getElementById("institucion");
+        const senaFields = document.getElementById("senaFields");
+        const nombreInstitucionField = document.getElementById("institucionField");
+    
+        
+
+        // Verificar el valor al cargar la página
+        if (institucionSelect.value === "SENA") {
+            senaFields.style.display = "block";
+            nombreInstitucionField.style.display = "none";
+        } else if (institucionSelect.value === "EXTERNO") {
+            senaFields.style.display = "none";
+            nombreInstitucionField.style.display = "block";
+        }
+
+        institucionSelect.addEventListener("change", function () {
+            if (institucionSelect.value === "SENA") {
+                senaFields.style.display = "block";
+                nombreInstitucionField.style.display = "none";
+            } else if (institucionSelect.value === "EXTERNO") {
+                senaFields.style.display = "none";
+                nombreInstitucionField.style.display = "block";
+            } else {
+                senaFields.style.display = "none";
+                nombreInstitucionField.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+

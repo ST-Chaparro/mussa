@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPRESARIAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Feria Empresarial</h1>
+    <p><center>Por favor, complete el formulario de inscripción:</center></p>
+    
+    <form action="../config/conect_empresarial.php" method="post" enctype="multipart/form-data">
+        <label for="institucion">Institución de donde participa:</label>
+        <input type="text" id="institucion" name="institucion" required>
+        <br><br>
+
+        <label for="numero_personas">Número de integrantes</label>
+        <input type="number" id="numero_personas" name="numero_personas" min="1" max="4">
+        <br><br>
+
+        <label for="titulo_proyecto">Título del Proyecto:</label>
+        <input type="text" id="titulo_proyecto" name="titulo_proyecto" required>
+        <br><br>
+
+        <input type="submit" value="Enviar Inscripción">
+    </form>
+</body>
+</html>

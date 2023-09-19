@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+    font-family:" Poppins",sans-serif;
+}
+body{
+    background-color: rgb(214, 216, 218);
+
+}
+
+header{
+    background-image: url(../img/hero.svg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+
+}
+.menu{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.menu .logo{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(10, 10, 10);
+}
+
+.navbar{
+    background-image:linear-gradient(to bottom(#2353, #fff));
+}
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+
+}
+.menu .navbar ul li a {
+    font-size: 13px;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    display: block;
+}
+.menu .navbar ul li a:hover{
+    color: blue;
+}
+#menu{
+    display: none;
+}
+
+.menu-icono{
+    width: 25px;
+
+}
+.icono img{
+    width: 80px;
+    height: 50px;
+    display: flex;
+}
+
+.menu label{
+    cursor: pointer;
+    display: none;
+    
+}
+.header-content{
+    display: flex;
+}
+.content{
+    padding: 150px 150px 0px 0px;
+}
+
+.content h1{
+    color: rgb(15, 15, 15);
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 5000;
+    line-height: 35px;
+    text-align: center;
+}
+.content p{
+    margin-top: 25px;
+    color: rgb(8, 8, 8);
+    text-transform: none;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.btn-1{
+    display: inline-block;
+    background-color: rgba(46, 177, 96, 0.925);
+    border: 1px solid rgb(61, 180, 13);
+    margin: 15px 10px 0px 0px;
+    padding: 15px 25px;
+    color: rgb(0, 0, 0);
+    border-radius: 25px;
+    
+}
+.btn-1:hover{
+    background-color: rgb(243, 247, 245);
+
+}
+.services{
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.service{
+   
+    padding: 25px;
+    margin: 0px 10px;
+    box-shadow: 0px 0px 20px rgb(135, 141, 214, 0.3) ; 
+}
+.service img{
+    margin-top:-50px;
+}
+.service h3{
+    font-size: 20px;
+    color: black;
+    margin-bottom: 10px;
+
+}
+.service p{
+    color: rgb(12, 12, 12);
+    font-size: 14px;
+}
+.portafolios{
+    padding: 80px 0 ;
+    text-align: center;
+    color: rgb(24, 23, 21);
+}
+.portafolios h2{
+    font-size: 55px;
+}
+.portafolio{
+    display: flex;
+    align-items: center;
+}
+.portafolio img{
+    width: 350px;
+}
+#portafolio_1{
+    text-align: center
+}
+
+#portaflio_1 h3{
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+#portafolio_1 p{
+    font-size: 18px;
+    margin-bottom: 25px;
+    
+
+}
+
+#portafolio_2{
+    text-align: center;
+}
+#portafolio_2 h3{
+    font-size: 20px;
+    margin-bottom: 15px  ;
+}
+#portafolio_2 p{
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.btn-2{
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 25px;
+    background-color: blueviolet;
+    color: azure;
+}
+.btn-2:hover{
+    background-color: blue;
+}
+footer{
+    padding:  200px 0px 30px 0px;
+    background-image: url(../img/footer.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+    
+    @media(max-width:991px){
+    
+        .menu{
+            padding: 20px;
+            
+        }
+        .menu label{
+            display: flex;
+        }
+    
+        
+        .menu .navbar{
+            position: absolute;
+            top: 60%;
+            left: 0;
+            right: 0;
+            display:none;
+            text-align: right;
+            background: transparent;
+        }
+    
+        .menu .navbar ul li {
+            width: 100%;        
+        }
+    
+        .menu .navbar ul li a{
+            padding: 10px;
+        }
+    
+        #menu:checked ~ .navbar{
+            display: initial;
+        }
+        header{
+            height: 0vh;
+            padding: 400px 0px;
+            background-position: center center;
+        }
+        .header-content{
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            padding: 0px 30px;
+        }
+        .content{
+            padding: 0px;
+        }
+        .content h1{
+            margin-top: 150px;
+            font-size: 20px;
+        }
+        .content p{
+            margin-top: 0px;
+        }
+        .header-content img{
+            width: 300px;
+            
+        }
+        .services{
+            flex-direction: column;
+            padding: 0px 30px 0px 30px;
+        }
+        .service{
+           
+            margin-bottom: 50px;
+         
+        }
+        .portafolios{
+            padding: 0px 30px 30px 30px;
+        }
+        .portafolios h2{
+            margin-bottom: 15px;
+            font-size: 35px;
+        }
+        .portafolio{
+            flex-direction: column;
+        }
+        .foto img{
+            display: none;
+        }
+        #portafolio_1{
+            text-align: center;
+            margin: 0px 0px 25px 0px;
+        }
+        #portafolio_2{
+            text-align: center;
+            margin: 0px 0px 25px 0px;
+        }
+        footer{
+            padding: 0px 30px 30px 30px;
+        }
+    }
